@@ -98,6 +98,7 @@ body {
   line-height: 1.42857;
   overflow-x: hidden;
   background: inherit;
+  tab-size: 4;
 }
 
 iframe {
@@ -125,7 +126,7 @@ a:hover {
   height: auto;
   width: inherit;
   word-break: normal;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
   position: relative;
   white-space: normal;
   overflow-x: visible;
@@ -181,8 +182,8 @@ body.typora-export {
   }
 }
 
-#write li&gt;figure:first-child {
-  margin-top: -20px;
+#write li&gt;figure:last-child {
+  margin-bottom: 0.5rem;
 }
 
 #write ol,
@@ -200,13 +201,7 @@ input,
 select,
 textarea {
   color: inherit;
-  font-style: inherit;
-  font-variant: inherit;
-  font-weight: inherit;
-  font-stretch: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  font-family: inherit;
+  font: inherit;
 }
 
 input[type=&quot;checkbox&quot;],
@@ -240,6 +235,10 @@ input[type=&quot;radio&quot;] {
 #write h6,
 #write p {
   position: relative;
+}
+
+p {
+  line-height: inherit;
 }
 
 h1,
@@ -365,6 +364,10 @@ table.md-table td {
 .CodeMirror-gutters {
   border-right: 0px;
   background-color: inherit;
+}
+
+.CodeMirror-linenumber {
+  user-select: none;
 }
 
 .CodeMirror {
@@ -550,10 +553,6 @@ li&gt; :first-child {
 
   .typora-export #write::after {
     height: 0px;
-  }
-
-  @page {
-    margin: 20mm 0px;
   }
 }
 
@@ -818,7 +817,7 @@ a.md-print-anchor {
   text-transform: none;
   letter-spacing: normal;
   word-spacing: normal;
-  word-wrap: normal;
+  overflow-wrap: normal;
   white-space: nowrap;
   float: none;
   direction: ltr;
@@ -832,12 +831,13 @@ a.md-print-anchor {
 }
 
 .MathJax_SVG * {
-  transition: none;
+  transition: none 0s ease 0s;
 }
 
 .MathJax_SVG_Display svg {
   vertical-align: middle !important;
   margin-bottom: 0px !important;
+  margin-top: 0px !important;
 }
 
 .os-windows.monocolor-emoji .md-emoji {
@@ -851,6 +851,7 @@ a.md-print-anchor {
 [lang=&quot;mermaid&quot;] svg,
 [lang=&quot;flow&quot;] svg {
   max-width: 100%;
+  height: auto;
 }
 
 [lang=&quot;mermaid&quot;] .node text {
@@ -878,6 +879,10 @@ iframe {
   border: 0px;
 }
 
+svg[id^=&quot;mermaidChart&quot;] {
+  line-height: 1em;
+}
+
 
 .CodeMirror {
   height: auto;
@@ -888,8 +893,7 @@ iframe {
 }
 
 .CodeMirror-scroll {
-  overflow-y: hidden;
-  overflow-x: auto;
+  overflow: auto hidden;
   z-index: 3;
 }
 
@@ -1154,7 +1158,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   font-size: inherit;
   margin: 0px;
   white-space: pre;
-  word-wrap: normal;
+  overflow-wrap: normal;
   color: inherit;
   z-index: 2;
   position: relative;
@@ -1162,7 +1166,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 }
 
 .CodeMirror-wrap pre {
-  word-wrap: break-word;
+  overflow-wrap: break-word;
   white-space: pre-wrap;
   word-break: normal;
 }
@@ -1428,13 +1432,7 @@ table tbody+tbody {
 
 .md-tag {
   color: inherit;
-  font-style: inherit;
-  font-variant: inherit;
-  font-weight: inherit;
-  font-stretch: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  font-family: inherit;
+  font: inherit;
 }
 
 #write pre.md-meta-block {
@@ -1540,10 +1538,6 @@ table tbody+tbody {
   border-color: rgb(229, 229, 229);
 }
 
-
-
-
-
 .typora-export li,
 .typora-export p,
 .typora-export,
@@ -1554,33 +1548,25 @@ table tbody+tbody {
 
 <body class="typora-export os-windows">
   <div id="write" class="is-node">
-    <h2><a name="header-n0" class="md-header-anchor "></a>排序</h2>
-    <h5><a name="header-n2" class="md-header-anchor "></a>插入排序</h5>
+    <h2><a name="排序" class="md-header-anchor"></a><span>排序</span></h2>
+    <h5><a name="插入排序" class="md-header-anchor"></a><span>插入排序</span></h5>
     <ol start>
       <li>
-        <p><strong>直接插入排序</strong></p>
-        <p><strong>算法思想</strong>：首先以一个元素为有序的序列，然后将后面的元素依次插入到有序的序列中合适的位置直到所有元素都插入有序序列。</p>
-        <p><strong>实现代码</strong></p>
-        <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c++"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+        <p><strong><span>直接插入排序</span></strong></p>
+        <p><strong><span>算法思想</span></strong><span>：首先以一个元素为有序的序列，然后将后面的元素依次插入到有序的序列中合适的位置直到所有元素都插入有序序列。</span></p>
+        <p><strong><span>实现代码</span></strong></p>
+        <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c++"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">InsertSort</span>(<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[],<span class="cm-variable-3">int</span> <span class="cm-variable">n</span>){</span></pre>
   </div>
-  <div class="CodeMirror-measure"></div>
-  <div style="position: relative; z-index: 1;"></div>
-  <div class="CodeMirror-code" role="presentation" style>
-    <div class="CodeMirror-activeline" style="position: relative;">
-      <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
-      <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
-      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">InsertSort</span>(<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[],<span class="cm-variable-3">int</span> <span class="cm-variable">n</span>){</span></pre>
-    </div>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable-3">int</span> <span class="cm-variable">i</span>,<span class="cm-variable">j</span>;</span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">i</span><span class="cm-operator">=</span><span class="cm-number">2</span>;<span class="cm-variable">i</span><span class="cm-operator">&lt;=</span><span class="cm-variable">n</span>;<span class="cm-variable">i</span><span class="cm-operator">++</span>)<span class="cm-tab" role="presentation" cm-text="    ">   </span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">if</span>(<span class="cm-variable">A</span>[<span class="cm-variable">i</span>].<span class="cm-variable">key</span><span class="cm-operator">&lt;</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span><span class="cm-operator">-</span><span class="cm-number">1</span>].<span class="cm-variable">key</span>){<span class="cm-tab" role="presentation" cm-text="    ">    </span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-number">0</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span>];<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//复制为哨兵，A[0]不存放元素</span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">j</span><span class="cm-operator">=</span><span class="cm-variable">i</span><span class="cm-operator">-</span><span class="cm-number">1</span>;<span class="cm-variable">A</span>[<span class="cm-number">0</span>].<span class="cm-variable">key</span><span class="cm-operator">&lt;</span><span class="cm-variable">A</span>[<span class="cm-variable">j</span>].<span class="cm-variable">key</span>;<span class="cm-operator">--</span><span class="cm-variable">j</span>)</span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">j</span><span class="cm-operator">+</span><span class="cm-number">1</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">j</span>];<span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//所有比待插入元素值大的都往后移一位，腾出空位</span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">j</span><span class="cm-operator">+</span><span class="cm-number">1</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-number">0</span>]; &nbsp; <span class="cm-tab" role="presentation" cm-text="    "> </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//复制到插入位置 </span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span>}</span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text>​</span></span></pre>
+  <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable-3">int</span> <span class="cm-variable">i</span>,<span class="cm-variable">j</span>;</span></pre>
+  <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">i</span><span class="cm-operator">=</span><span class="cm-number">2</span>;<span class="cm-variable">i</span><span class="cm-operator">&lt;=</span><span class="cm-variable">n</span>;<span class="cm-variable">i</span><span class="cm-operator">++</span>)<span class="cm-tab" role="presentation" cm-text="    ">   </span></span></pre>
+  <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">if</span>(<span class="cm-variable">A</span>[<span class="cm-variable">i</span>].<span class="cm-variable">key</span><span class="cm-operator">&lt;</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span><span class="cm-operator">-</span><span class="cm-number">1</span>].<span class="cm-variable">key</span>){<span class="cm-tab" role="presentation" cm-text="    ">    </span></span></pre>
+  <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-number">0</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span>];<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//复制为哨兵，A[0]不存放元素，作为辅助变量使用</span></span></pre>
+  <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">j</span><span class="cm-operator">=</span><span class="cm-variable">i</span><span class="cm-operator">-</span><span class="cm-number">1</span>;<span class="cm-variable">A</span>[<span class="cm-number">0</span>].<span class="cm-variable">key</span><span class="cm-operator">&lt;</span><span class="cm-variable">A</span>[<span class="cm-variable">j</span>].<span class="cm-variable">key</span>;<span class="cm-operator">--</span><span class="cm-variable">j</span>)</span></pre>
+  <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">j</span><span class="cm-operator">+</span><span class="cm-number">1</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">j</span>];<span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//所有比待插入元素值大的都往后移一位，腾出空位</span></span></pre>
+  <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">j</span><span class="cm-operator">+</span><span class="cm-number">1</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-number">0</span>]; &nbsp; <span class="cm-tab" role="presentation" cm-text="    "> </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//插入 </span></span></pre>
+  <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span>}</span></pre>
+  <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+  <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text>​</span></span></pre>
   </div>
   </div>
   </div>
@@ -1591,125 +1577,635 @@ table tbody+tbody {
   </div>
   </div>
   </pre>
-  <p><strong>算法模拟</strong></p>
-  <p><img src="https://upload-images.jianshu.io/upload_images/11016594-150b6c462e3ed809.png?imageMogr2/auto-orient/strip|imageView2/2/format/webp" alt="直接插入排序过程" referrerpolicy="no-referrer"></p>
+  <p><span> </span><strong><span>算法模拟</span></strong></p>
+  <p><img src="https://upload-images.jianshu.io/upload_images/11016594-150b6c462e3ed809.png?imageMogr2/auto-orient/strip|imageView2/2/format/webp" referrerpolicy="no-referrer" alt="直接插入排序过程" title="算法模拟"></p>
+  <p><strong><span>空间复杂度</span></strong><span>：O(1) 就地算法，辅助单元为哨兵Array[0]</span></p>
+  <p><strong><span>时间复杂度</span></strong><span>：</span></p>
+  <p><span> </span><span>最好情况：表中元素为正序，Tn=O(n), 比较次数 : n, 不需要移动；</span></p>
+  <p><span> </span><span>最坏情况：表中元素为逆序，Tn=O(n²), 比较次数 : ∑i, i∈[2,n], 移动次数: ∑i+1, i∈[2,n];</span></p>
+  <p><span> </span><span>平均情况：元素随机，Tn=O(n²), 比较次数=移动次数=n²/4</span></p>
+  <p><strong><span>稳定性</span></strong><span>：稳定</span></p>
+  <p><strong><span>适用性</span></strong><span>：顺序存储、链式存储的线性表</span></p>
+  <p><strong><span>特点</span></strong><span>：每次边比较然后边移动元素，直到找到插入的位置。有可能直至最后一趟排序所有元素都不在其最终位置上。</span></p>
+  </li>
+  <li>
+    <p><strong><span>折半插入排序</span></strong></p>
+    <p><strong><span>算法思想</span></strong><span>：将比较和移动这两个操作分离出来，也就是先利用折半查找找到插入的位置，然后一次性移动元素，再插入该元素。</span></p>
+    <p><strong><span>实质</span></strong><span>：直接插入算法的改进</span></p>
+    <p><strong><span>实现代码</span></strong></p>
+    <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c++" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+    </div>
+    <div class="CodeMirror-measure"></div>
+    <div style="position: relative; z-index: 1;"></div>
+    <div class="CodeMirror-code" role="presentation" style>
+      <div class="CodeMirror-activeline" style="position: relative;">
+        <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+        <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">InsertSort</span>(<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[],<span class="cm-variable-3">int</span> <span class="cm-variable">n</span>){</span></pre>
+      </div>
+      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable-3">int</span> <span class="cm-variable">i</span>,<span class="cm-variable">j</span>,<span class="cm-variable">low</span>,<span class="cm-variable">high</span>,<span class="cm-variable">mid</span>;</span></pre>
+      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">i</span><span class="cm-operator">=</span><span class="cm-number">2</span>;<span class="cm-variable">i</span><span class="cm-operator">&lt;=</span><span class="cm-variable">n</span>;<span class="cm-variable">i</span><span class="cm-operator">++</span>){<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> <span class="cm-comment">//i是待插入的元素下标，A[0]~A[i-1]为有序数列<span class="cm-tab" role="presentation" cm-text="    ">  </span></span></span></pre>
+      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-number">0</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span>];<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp; &nbsp;<span class="cm-comment">//保存待插入的值<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span></span></span></pre>
+      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">low</span><span class="cm-operator">=</span><span class="cm-number">1</span>;<span class="cm-variable">high</span><span class="cm-operator">=</span><span class="cm-variable">i</span><span class="cm-operator">-</span><span class="cm-number">1</span>; </span></pre>
+      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">while</span>(<span class="cm-variable">low</span><span class="cm-operator">&lt;=</span><span class="cm-variable">high</span>){<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-comment">//折半查找<span class="cm-tab" role="presentation" cm-text="    ">  </span></span></span></pre>
+      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">mid</span><span class="cm-operator">=</span>(<span class="cm-variable">low</span><span class="cm-operator">+</span><span class="cm-variable">high</span>)<span class="cm-operator">/</span><span class="cm-number">2</span>;<span class="cm-tab" role="presentation" cm-text="    ">   </span></span></pre>
+      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">if</span>(<span class="cm-variable">A</span>[<span class="cm-variable">mid</span>].<span class="cm-variable">key</span><span class="cm-operator">&gt;</span><span class="cm-variable">A</span>[<span class="cm-number">0</span>].<span class="cm-variable">key</span>) <span class="cm-variable">high</span><span class="cm-operator">=</span><span class="cm-variable">mid</span><span class="cm-operator">-</span><span class="cm-number">1</span>; </span></pre>
+      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">else</span> <span class="cm-variable">low</span><span class="cm-operator">=</span><span class="cm-variable">mid</span><span class="cm-operator">+</span><span class="cm-number">1</span>;<span class="cm-tab" role="presentation" cm-text="    "> </span></span></pre>
+      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span>}<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp; <span class="cm-comment">//找到了待插入的位置 接下来从后往前依次后移元素腾出位置</span></span></pre>
+      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">j</span><span class="cm-operator">=</span><span class="cm-variable">i</span><span class="cm-operator">-</span><span class="cm-number">1</span>;<span class="cm-variable">j</span><span class="cm-operator">&gt;=</span><span class="cm-variable">high</span><span class="cm-operator">+</span><span class="cm-number">1</span>;<span class="cm-operator">--</span><span class="cm-variable">j</span>)<span class="cm-variable">A</span>[<span class="cm-variable">j</span><span class="cm-operator">+</span><span class="cm-number">1</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">j</span>];<span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span></span></pre>
+      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">high</span><span class="cm-operator">+</span><span class="cm-number">1</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-number">0</span>];<span class="cm-tab" role="presentation" cm-text="    "> </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//插入，high指向有序数列的末位<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">    </span></span></span></pre>
+      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span>}</span></pre>
+      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text>​</span></span></pre>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 414px;"></div>
+    <div class="CodeMirror-gutters" style="display: none; height: 414px;"></div>
+    </div>
+    </div>
+    </pre>
+    <p><span> </span><strong><span>算法模拟</span></strong></p>
+    <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Binary_Search_Depiction.svg/705px-Binary_Search_Depiction.svg.png" referrerpolicy="no-referrer" alt="折半插入排序过程" title="算法模拟"></p>
+    <p><span> </span><strong><span>空间复杂度</span></strong><span>：O(1) 就地算法，辅助单元为哨兵Array[0]</span></p>
+    <p><span> </span><strong><span>时间复杂度</span></strong><span>：</span></p>
+    <p><span> </span><span>最好情况：表中元素为正序，Tn=O(nlogn), 比较次数 = nlogn, 不需要移动；</span></p>
+    <p><span> </span><span>最坏情况：表中元素为逆序，Tn=O(n²), 比较次数 = nlogn , 移动次数= ∑i+1, i∈[2,n];</span></p>
+    <p><span> </span><span>平均情况：元素随机，Tn=O(n²), 比较次数= nlogn, 移动次数=n²/4</span></p>
+    <p><span> </span><strong><span>稳定性</span></strong><span>：稳定</span></p>
+    <p><span> </span><strong><span>适用性</span></strong><span>：顺序存储的线性表</span></p>
+    <p><span> </span><strong><span>特点</span></strong><span>：先查后移，比较次数与表的初始状态无关</span></p>
+    <p>&nbsp;</p>
   </li>
   </ol>
-  <p><span> </span><strong>空间复杂度</strong>：O(1) 就地算法，辅助单元为哨兵Array[0]</p>
-  <p><span> </span><strong>时间复杂度</strong>：</p>
-  <p><span> </span>最好情况：表中元素为正序，Tn=O(n), 比较次数 : n, 不需要移动；</p>
-  <p><span> </span>最坏情况：表中元素为逆序，Tn=O(n²), 比较次数 : ∑i, i∈[2,n], 移动次数: ∑i+1, i∈[2,n];</p>
-  <p><span> </span>平均情况：元素随机，Tn=O(n²), 比较次数=移动次数=n²/4</p>
-  <p><span> </span><strong>稳定性</strong>：稳定</p>
-  <p><span> </span><strong>适用性</strong>：顺序存储、链式存储的线性表</p>
-  <p><span> </span><strong>特点</strong>：每次边比较然后边移动元素，直到找到插入的位置。</p>
-  <ol start="2">
-    <li>
-      <p><strong>折半插入排序</strong></p>
-      <p><strong>算法思想</strong>：将比较和移动这两个操作分离出来，也就是先利用折半查找找到插入的位置，然后一次性移动元素，再插入该元素。</p>
-      <p><strong>实质</strong>：直接插入算法的改进</p>
-      <p><strong>实现代码</strong></p>
-    </li>
-  </ol>
-  <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c++" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
-  </div>
-  <div class="CodeMirror-measure"></div>
-  <div style="position: relative; z-index: 1;"></div>
-  <div class="CodeMirror-code" role="presentation" style>
-    <div class="CodeMirror-activeline" style="position: relative;">
-      <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
-      <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
-      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">InsertSort</span>(<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[],<span class="cm-variable-3">int</span> <span class="cm-variable">n</span>){</span></pre>
-    </div>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable-3">int</span> <span class="cm-variable">i</span>,<span class="cm-variable">j</span>,<span class="cm-variable">low</span>,<span class="cm-variable">high</span>,<span class="cm-variable">mid</span>;</span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">i</span><span class="cm-operator">=</span><span class="cm-number">2</span>;<span class="cm-variable">i</span><span class="cm-operator">&lt;=</span><span class="cm-variable">n</span>;<span class="cm-variable">i</span><span class="cm-operator">++</span>){<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> <span class="cm-comment">//i记录的是待插入的元素下标，也就是说i-1之前的元素都是有序的<span class="cm-tab" role="presentation" cm-text="    ">  </span></span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-number">0</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span>];<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp; &nbsp;<span class="cm-comment">//保存待插入的值<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span></span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">low</span><span class="cm-operator">=</span><span class="cm-number">1</span>;<span class="cm-variable">high</span><span class="cm-operator">=</span><span class="cm-variable">i</span><span class="cm-operator">-</span><span class="cm-number">1</span>; </span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">while</span>(<span class="cm-variable">low</span><span class="cm-operator">&lt;=</span><span class="cm-variable">high</span>){<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-comment">//折半查找<span class="cm-tab" role="presentation" cm-text="    ">  </span></span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">mid</span><span class="cm-operator">=</span>(<span class="cm-variable">low</span><span class="cm-operator">+</span><span class="cm-variable">high</span>)<span class="cm-operator">/</span><span class="cm-number">2</span>;<span class="cm-tab" role="presentation" cm-text="    ">   </span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">if</span>(<span class="cm-variable">A</span>[<span class="cm-variable">mid</span>].<span class="cm-variable">key</span><span class="cm-operator">&gt;</span><span class="cm-variable">A</span>[<span class="cm-number">0</span>].<span class="cm-variable">key</span>) <span class="cm-variable">high</span><span class="cm-operator">=</span><span class="cm-variable">mid</span><span class="cm-operator">-</span><span class="cm-number">1</span>; </span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">else</span> <span class="cm-variable">low</span><span class="cm-operator">=</span><span class="cm-variable">mid</span><span class="cm-operator">+</span><span class="cm-number">1</span>;<span class="cm-tab" role="presentation" cm-text="    "> </span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span>}<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp; <span class="cm-comment">//找到了待插入的位置 接下来从后往前依次后移元素腾出位置</span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">j</span><span class="cm-operator">=</span><span class="cm-variable">i</span><span class="cm-operator">-</span><span class="cm-number">1</span>;<span class="cm-variable">j</span><span class="cm-operator">&gt;=</span><span class="cm-variable">high</span><span class="cm-operator">+</span><span class="cm-number">1</span>;<span class="cm-operator">--</span><span class="cm-variable">j</span>)<span class="cm-variable">A</span>[<span class="cm-variable">j</span><span class="cm-operator">+</span><span class="cm-number">1</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">j</span>];<span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">high</span><span class="cm-operator">+</span><span class="cm-number">1</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-number">0</span>];<span class="cm-tab" role="presentation" cm-text="    "> </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//因为此时high指向的是待插入位置的前一位<span class="cm-tab" role="presentation" cm-text="    "> </span><span class="cm-tab" role="presentation" cm-text="    ">    </span></span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span>}</span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text>​</span></span></pre>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 414px;"></div>
-  <div class="CodeMirror-gutters" style="display: none; height: 414px;"></div>
-  </div>
-  </div>
-  </pre>
-  <p> <strong>算法模拟</strong></p>
-  <p><img src="https://img-blog.csdn.net/20160316152125052" alt="折半插入排序过程" referrerpolicy="no-referrer"></p>
-  <p> <strong>空间复杂度</strong>：O(1) 就地算法，辅助单元为哨兵Array[0]</p>
-  <p> <strong>时间复杂度</strong>：</p>
-  <p><span> </span>最好情况：表中元素为正序，Tn=O(nlogn), 比较次数 = nlogn, 不需要移动；</p>
-  <p><span> </span>最坏情况：表中元素为逆序，Tn=O(n²), 比较次数 = nlogn , 移动次数= ∑i+1, i∈[2,n];</p>
-  <p><span> </span>平均情况：元素随机，Tn=O(n²), 比较次数= nlogn, 移动次数=n²/4</p>
-  <p> <strong>稳定性</strong>：稳定</p>
-  <p> <strong>适用性</strong>：顺序存储的线性表</p>
-  <p> <strong>特点</strong>：先查后移，比较次数与表的初始状态无关</p>
   <ol start="3">
     <li>
-      <p><strong>希尔排序</strong></p>
-    </li>
-    <li>
-      <p><strong>算法思想</strong>：希尔排序本质上还是插入排序，只不过是把待排序序列分成几个子序列，再分别对这几个子序列进行直接插入排序。</p>
-      <p><strong>实质</strong>：直接插入算法的改进</p>
-      <p><strong>实现代码</strong></p>
+      <p><strong><span>希尔排序</span></strong></p>
+      <p><strong><span>算法思想</span></strong><span>：希尔排序本质上还是插入排序，只不过是把待排序序列分成几个子序列，再分别对这几个子序列进行直接插入排序。</span></p>
+      <p><strong><span>实质</span></strong><span>：直接插入算法的改进</span></p>
+      <p><strong><span>实现代码</span></strong></p>
+      <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c++"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+      </div>
+      <div class="CodeMirror-measure"></div>
+      <div style="position: relative; z-index: 1;"></div>
+      <div class="CodeMirror-code" role="presentation" style>
+        <div class="CodeMirror-activeline" style="position: relative;">
+          <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+          <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+          <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/* A[i].key是待插入的关键字，i-dk之前的都是有序的，如果待插入的比有序序列最后一个小，则需要进行排序(进入if语句块)，如果大则不需要(跳出if语句块)。s待插入关键字之前以dk为增量的关键字只要比待插入关键字大的都往后移动dk位</span></span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">*/</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">ShellSort</span> (<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[],<span class="cm-variable-3">int</span> <span class="cm-variable">n</span>){</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable-3">int</span> <span class="cm-variable">i</span>,<span class="cm-variable">j</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">dk</span><span class="cm-operator">=</span><span class="cm-variable">n</span><span class="cm-operator">/</span><span class="cm-number">2</span>;<span class="cm-variable">dk</span><span class="cm-operator">&gt;=</span><span class="cm-number">1</span>;<span class="cm-variable">dk</span><span class="cm-operator">=</span><span class="cm-variable">dk</span><span class="cm-operator">/</span><span class="cm-number">2</span>)<span class="cm-tab" role="presentation" cm-text="    ">   </span> &nbsp; &nbsp;<span class="cm-comment">//初始增量为总长度的一半，之后依次除2且向下取整直至d=1</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">i</span><span class="cm-operator">=</span><span class="cm-variable">dk</span><span class="cm-operator">+</span><span class="cm-number">1</span>;<span class="cm-variable">i</span><span class="cm-operator">&lt;=</span><span class="cm-variable">n</span>;<span class="cm-operator">++</span><span class="cm-variable">i</span>)</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">if</span>(<span class="cm-variable">A</span>[<span class="cm-variable">i</span>].<span class="cm-variable">key</span><span class="cm-operator">&lt;</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span><span class="cm-operator">-</span><span class="cm-variable">dk</span>].<span class="cm-variable">key</span>){</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-number">0</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span>]; &nbsp; &nbsp; &nbsp; <span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-comment">//待插入关键字暂存在A[0]</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">j</span><span class="cm-operator">=</span><span class="cm-variable">i</span><span class="cm-operator">-</span><span class="cm-variable">dk</span>;<span class="cm-variable">j</span><span class="cm-operator">&gt;</span><span class="cm-number">0</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">A</span>[<span class="cm-number">0</span>].<span class="cm-variable">key</span><span class="cm-operator">&lt;</span> <span class="cm-variable">A</span>[<span class="cm-variable">j</span>].<span class="cm-variable">key</span>; <span class="cm-variable">j</span><span class="cm-operator">-=</span><span class="cm-variable">dk</span>)</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">j</span><span class="cm-operator">+</span><span class="cm-variable">dk</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">j</span>];<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">j</span><span class="cm-operator">+</span><span class="cm-variable">dk</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-number">0</span>]; <span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//找到了待插入的位置，就将待插入关键字插入这个位置</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span>}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 432px;"></div>
+      <div class="CodeMirror-gutters" style="display: none; height: 432px;"></div>
+      </div>
+      </div>
+      </pre>
+      <p><span> </span><strong><span>算法模拟</span></strong></p>
+      <p><img src="https://upload-images.jianshu.io/upload_images/1940317-0f04f8b6aec097bb?imageMogr2/auto-orient/strip|imageView2/2/w/950/format/webp" referrerpolicy="no-referrer" alt="希尔排序过程" title="算法模拟动画"></p>
+      <p><img src="https://segmentfault.com/img/bVNRxY?w=542&amp;h=383" referrerpolicy="no-referrer" alt="希尔排序" title="希尔图解"></p>
+      <p><strong><span>空间复杂度</span></strong><span>：O(1) 就地算法，辅助单元为常数个辅助单元</span></p>
+      <p><strong><span>时间复杂度</span></strong><span>：依赖增量序列函数，涉及到数学上暂未解决难题</span></p>
+      <p><strong><span>稳定性</span></strong><span>：不稳定</span></p>
+      <p><strong><span>适用性</span></strong><span>：顺序存储的线性表</span></p>
+      <p>
+        <strong><span>特点</span></strong><span>：希尔排序的每一轮都会使整个序列变得越来越有序，最后一轮当增量为1的时候，整个序列几乎都是有序的，所以进行直接插入排序会提高排序的效率。</span>
+      </p>
+      <p>&nbsp;</p>
     </li>
   </ol>
-  <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c++" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
-  </div>
-  <div class="CodeMirror-measure"></div>
-  <div style="position: relative; z-index: 1;"></div>
-  <div class="CodeMirror-code" role="presentation" style>
-    <div class="CodeMirror-activeline" style="position: relative;">
-      <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
-      <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
-      <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/* A[i].key是待插入的关键字，i-dk之前的都是有序的，如果待插入的比有序序列最后一个小，则需要进行排序(进入if语句块)，如果大则不需要(跳出if语句块)。s待插入关键字之前以dk为增量的关键字只要比待插入关键字大的都往后移动dk位</span></span></pre>
-    </div>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">*/</span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">ShellSort</span> (<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[],<span class="cm-variable-3">int</span> <span class="cm-variable">n</span>){</span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable-3">int</span> <span class="cm-variable">i</span>,<span class="cm-variable">j</span>;</span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">dk</span><span class="cm-operator">=</span><span class="cm-variable">n</span><span class="cm-operator">/</span><span class="cm-number">2</span>;<span class="cm-variable">dk</span><span class="cm-operator">&gt;=</span><span class="cm-number">1</span>;<span class="cm-variable">dk</span><span class="cm-operator">=</span><span class="cm-variable">dk</span><span class="cm-operator">/</span><span class="cm-number">2</span>)<span class="cm-tab" role="presentation" cm-text="    ">   </span> &nbsp; &nbsp;<span class="cm-comment">//初始增量为总长度的一半，之后依次除2且向下取整，</span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">//且最后一次要为1</span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">i</span><span class="cm-operator">=</span><span class="cm-variable">dk</span><span class="cm-operator">+</span><span class="cm-number">1</span>;<span class="cm-variable">i</span><span class="cm-operator">&lt;=</span><span class="cm-variable">n</span>;<span class="cm-operator">++</span><span class="cm-variable">i</span>)</span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">if</span>(<span class="cm-variable">A</span>[<span class="cm-variable">i</span>].<span class="cm-variable">key</span><span class="cm-operator">&lt;</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span><span class="cm-operator">-</span><span class="cm-variable">dk</span>].<span class="cm-variable">key</span>){</span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-number">0</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span>]; &nbsp; &nbsp; &nbsp; <span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-comment">//待插入关键字暂存在A[0]</span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">j</span><span class="cm-operator">=</span><span class="cm-variable">i</span><span class="cm-operator">-</span><span class="cm-variable">dk</span>;<span class="cm-variable">j</span><span class="cm-operator">&gt;</span><span class="cm-number">0</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">A</span>[<span class="cm-number">0</span>].<span class="cm-variable">key</span><span class="cm-operator">&lt;</span> <span class="cm-variable">A</span>[<span class="cm-variable">j</span>].<span class="cm-variable">key</span>; <span class="cm-variable">j</span><span class="cm-operator">-=</span><span class="cm-variable">dk</span>)</span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">j</span><span class="cm-operator">+</span><span class="cm-variable">dk</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">j</span>];<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">j</span><span class="cm-operator">+</span><span class="cm-variable">dk</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-number">0</span>]; <span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//找到了待插入的位置，就将待插入关键字插入这个位置</span></span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span>}</span></pre>
-    <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 432px;"></div>
-  <div class="CodeMirror-gutters" style="display: none; height: 432px;"></div>
-  </div>
-  </div>
-  </pre>
-  <p> <strong>算法模拟</strong></p>
-  <p><img src="https://upload-images.jianshu.io/upload_images/1940317-0f04f8b6aec097bb?imageMogr2/auto-orient/strip|imageView2/2/w/950/format/webp" alt="希尔排序过程" referrerpolicy="no-referrer"></p>
-  <ul>
+  <h5><a name="交换排序" class="md-header-anchor"></a><strong><span>交换排序</span></strong></h5>
+  <ol start>
     <li>
-      <p><img src="https://segmentfault.com/img/bVNRxY?w=542&amp;h=383" alt="希尔排序" referrerpolicy="no-referrer"></p>
-      <p><strong>空间复杂度</strong>：O(1) 就地算法，辅助单元为常数个辅助单元</p>
-      <p><strong>时间复杂度</strong>：依赖增量序列函数，涉及到数学上暂未解决难题</p>
-      <p><strong>稳定性</strong>：不稳定</p>
-      <p><strong>适用性</strong>：顺序存储的线性表</p>
-      <p><strong>特点</strong>：希尔排序的每一轮都会使整个序列变得越来越有序，最后一轮当增量为1的时候，整个序列几乎都是有序的，所以进行直接插入排序会提高排序的效率</p>
+      <p><strong><span>冒泡排序</span></strong></p>
+      <p><strong><span>算法思想</span></strong><span>：假设待排序的表长为n,
+          从后往前（或从前往后）相邻元素之间两两比较，较小者（或较大者）往上浮，直至序列全部比较完，完成一趟冒泡。</span></p>
+      <p><strong><span>实现代码</span></strong></p>
+      <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c++" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+      </div>
+      <div class="CodeMirror-measure"></div>
+      <div style="position: relative; z-index: 1;"></div>
+      <div class="CodeMirror-code" role="presentation" style>
+        <div class="CodeMirror-activeline" style="position: relative;">
+          <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+          <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+          <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">BubbleSort</span>(<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[],<span class="cm-variable-3">int</span> <span class="cm-variable">n</span>){</span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">i</span><span class="cm-operator">=</span><span class="cm-number">0</span>;<span class="cm-variable">i</span><span class="cm-operator">&lt;</span><span class="cm-variable">n</span><span class="cm-operator">-</span><span class="cm-number">1</span>;<span class="cm-variable">i</span><span class="cm-operator">++</span>){</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable-3">bool</span> <span class="cm-variable">flag</span><span class="cm-operator">=</span><span class="cm-atom">false</span>; <span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//当整个序列都有序的时候，标志位不变<span class="cm-tab" role="presentation" cm-text="    "> </span></span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">j</span><span class="cm-operator">=</span><span class="cm-variable">n</span><span class="cm-operator">-</span><span class="cm-number">1</span>;<span class="cm-variable">j</span><span class="cm-operator">&gt;</span><span class="cm-variable">i</span>;<span class="cm-variable">j</span><span class="cm-operator">--</span>)<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//一趟冒泡过程，每趟进行n-1次比较</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">if</span>(<span class="cm-variable">A</span>[<span class="cm-variable">j</span><span class="cm-operator">-</span><span class="cm-number">1</span>].<span class="cm-variable">key</span><span class="cm-operator">&gt;</span><span class="cm-variable">A</span>[<span class="cm-variable">j</span>].<span class="cm-variable">key</span>){<span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//如果前面的元素比后面的大，则需要做交换</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">ElemType</span> <span class="cm-variable">temp</span><span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">j</span><span class="cm-operator">-</span><span class="cm-number">1</span>].<span class="cm-variable">key</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">A</span>[<span class="cm-variable">j</span><span class="cm-operator">-</span><span class="cm-number">1</span>].<span class="cm-variable">key</span><span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">j</span>].<span class="cm-variable">key</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">A</span>[<span class="cm-variable">j</span>].<span class="cm-variable">key</span><span class="cm-operator">=</span><span class="cm-variable">temp</span>;<span class="cm-tab" role="presentation" cm-text="    ">    </span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">flag</span><span class="cm-operator">=</span><span class="cm-atom">true</span>; <span class="cm-tab" role="presentation" cm-text="    "> </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp; <span class="cm-comment">//发生了数据交换 修改标志位</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span>}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">if</span>(<span class="cm-variable">flag</span><span class="cm-operator">==</span><span class="cm-atom">false</span>)<span class="cm-keyword">return</span> ; <span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//本趟遍历后没有发生交换，排序完成</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span>}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text>​</span></span></pre>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 384px;"></div>
+      <div class="CodeMirror-gutters" style="display: none; height: 384px;"></div>
+      </div>
+      </div>
+      </pre>
+      <p><span> </span><strong><span>算法模拟</span></strong></p>
+      <p><img src="https://upload-images.jianshu.io/upload_images/9916080-f0605d250bd43468?imageMogr2/auto-orient/strip|imageView2/2/w/826/format/webp" referrerpolicy="no-referrer" alt="冒泡排序过程" title="算法模拟"></p>
+      <p>&nbsp;</p>
+      <p><strong><span>算法优化</span></strong><span>：（鸡尾酒算法）</span></p>
+      <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c++" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+      </div>
+      <div class="CodeMirror-measure"></div>
+      <div style="position: relative; z-index: 1;"></div>
+      <div class="CodeMirror-code" role="presentation" style>
+        <div class="CodeMirror-activeline" style="position: relative;">
+          <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+          <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+          <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">//鸡尾酒排序--双向冒泡排序(上浮和下沉交替进行)</span></span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">template</span> <span class="cm-operator">&lt;</span><span class="cm-keyword">typename</span> <span class="cm-variable">T</span><span class="cm-operator">&gt;</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">Cocktail_Sort</span>(<span class="cm-variable">T</span> <span class="cm-operator">*</span><span class="cm-variable">arrayT</span>, <span class="cm-variable-3">size_t</span> <span class="cm-variable">length</span>)</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">tail</span><span class="cm-operator">=</span><span class="cm-variable">length</span><span class="cm-operator">-</span><span class="cm-number">1</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">temp</span><span class="cm-operator">=</span><span class="cm-number">0</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span><span class="cm-operator">=</span><span class="cm-number">0</span>; <span class="cm-variable">i</span><span class="cm-operator">&lt;</span><span class="cm-variable">tail</span>;)</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">j</span><span class="cm-operator">=</span><span class="cm-variable">tail</span>; <span class="cm-variable">j</span><span class="cm-operator">&gt;</span><span class="cm-variable">i</span>; <span class="cm-operator">--</span><span class="cm-variable">j</span>) <span class="cm-comment">//第一轮，先将最小的数据排到前面</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">arrayT</span>[<span class="cm-variable">j</span>]<span class="cm-operator">&lt;</span><span class="cm-variable">arrayT</span>[<span class="cm-variable">j</span><span class="cm-operator">-</span><span class="cm-number">1</span>])</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">temp</span><span class="cm-operator">=</span><span class="cm-variable">arrayT</span>[<span class="cm-variable">j</span>];</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">arrayT</span>[<span class="cm-variable">j</span>]<span class="cm-operator">=</span><span class="cm-variable">arrayT</span>[<span class="cm-variable">j</span><span class="cm-operator">-</span><span class="cm-number">1</span>];</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">arrayT</span>[<span class="cm-variable">j</span><span class="cm-operator">-</span><span class="cm-number">1</span>]<span class="cm-operator">=</span><span class="cm-variable">temp</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-operator">++</span><span class="cm-variable">i</span>; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//原来i处数据已排好序，加1</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">j</span><span class="cm-operator">=</span><span class="cm-variable">i</span>; <span class="cm-variable">j</span><span class="cm-operator">&lt;</span><span class="cm-variable">tail</span>; <span class="cm-operator">++</span><span class="cm-variable">j</span>) &nbsp;<span class="cm-comment">//第二轮，将最大的数据排到后面</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">arrayT</span>[<span class="cm-variable">j</span>]<span class="cm-operator">&gt;</span><span class="cm-variable">arrayT</span>[<span class="cm-variable">j</span><span class="cm-operator">+</span><span class="cm-number">1</span>])</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  {</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">temp</span><span class="cm-operator">=</span><span class="cm-variable">arrayT</span>[<span class="cm-variable">j</span>];</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">arrayT</span>[<span class="cm-variable">j</span>]<span class="cm-operator">=</span><span class="cm-variable">arrayT</span>[<span class="cm-variable">j</span><span class="cm-operator">+</span><span class="cm-number">1</span>];</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">arrayT</span>[<span class="cm-variable">j</span><span class="cm-operator">+</span><span class="cm-number">1</span>]<span class="cm-operator">=</span><span class="cm-variable">temp</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">tail</span><span class="cm-operator">--</span>; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">//原tail处数据也已排好序，将其减1</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 782px;"></div>
+      <div class="CodeMirror-gutters" style="display: none; height: 782px;"></div>
+      </div>
+      </div>
+      </pre>
+      <p><strong><span>鸡尾酒算法模拟过程</span></strong></p>
+      <p><img src="https://user-gold-cdn.xitu.io/2019/6/21/16b77c8dc29917dd?w=277&amp;h=257&amp;f=gif&amp;s=125855" referrerpolicy="no-referrer" alt="鸡尾酒算法" title="鸡尾酒"></p>
+      <p><strong><span>空间复杂度</span></strong><span>：O(1) 就地算法，辅助单元为哨兵Array[0]</span></p>
+      <p><strong><span>时间复杂度</span></strong><span>：</span></p>
+      <p><span> </span><span>最好情况：表中元素为正序，Tn=O(n), 比较次数 : n-1, 不需要移动；</span></p>
+      <p><span> </span><span>最坏情况：表中元素为逆序，Tn=O(n²), 比较次数 : n(n-1)/2, 移动次数: 3n(n-1)/2;</span></p>
+      <p><span> </span><span>平均情况：元素随机，Tn=O(n²);</span></p>
+      <p><strong><span>稳定性</span></strong><span>：稳定</span></p>
+      <p><strong><span>适用性</span></strong><span>：顺序存储、链式存储的线性表</span></p>
+      <p><strong><span>特点</span></strong><span>：每趟排序都会将一个元素放置到其最终位置。有序子序列为全局有序。</span></p>
+      <p>&nbsp;</p>
     </li>
-  </ul>
+    <li>
+      <p><strong><span>快速排序</span></strong></p>
+      <p>
+        <strong><span>算法思想</span></strong><span>：将问题划分为若干个子问题，分别求解（分治法）。将待排序的序列按选定的枢轴值划分为两个子序列，枢轴值左侧序列元素均小于(均大于)枢轴值，右侧序列元素均大于(均小于)枢轴值。枢轴值则处于最终位置。该过程为一趟快速排序。而后对其两个子序列分别递归进行快速排序，以完成最终排序。</span>
+      </p>
+      <p><strong><span>实质</span></strong><span>：冒泡的改进</span></p>
+      <p><strong><span>实现代码</span></strong></p>
+      <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c++" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+      </div>
+      <div class="CodeMirror-measure"></div>
+      <div style="position: relative; z-index: 1;"></div>
+      <div class="CodeMirror-code" role="presentation" style>
+        <div class="CodeMirror-activeline" style="position: relative;">
+          <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+          <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+          <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/*划分函数——pivot &lt; A[high] ?high-- : ( A[low]&lt;-&gt;A[high],low++) */</span></span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">int</span> <span class="cm-def">Partition</span>(<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[],<span class="cm-variable-3">int</span> <span class="cm-variable">low</span>,<span class="cm-variable-3">int</span> <span class="cm-variable">high</span>){ &nbsp;<span class="cm-comment">//low是待排序的序列起始下标，high是末尾下标</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">ElemType</span> <span class="cm-variable">pivot</span><span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">low</span>];<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> <span class="cm-comment">//通常使用第一个元素作为枢轴</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">while</span>(<span class="cm-variable">low</span><span class="cm-operator">&lt;</span><span class="cm-variable">high</span>){<span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">while</span>(<span class="cm-variable">low</span><span class="cm-operator">&lt;</span><span class="cm-variable">high</span><span class="cm-operator">&amp;&amp;</span><span class="cm-variable">A</span>[<span class="cm-variable">high</span>]<span class="cm-operator">&gt;=</span><span class="cm-variable">pivot</span>) <span class="cm-operator">--</span><span class="cm-variable">high</span>;<span class="cm-comment">//先从末尾往前找到第一个比枢轴小的元素</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">low</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">high</span>]; <span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> <span class="cm-comment">//用high的元素替换low的元素</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">while</span>(<span class="cm-variable">low</span><span class="cm-operator">&lt;</span><span class="cm-variable">high</span><span class="cm-operator">&amp;&amp;</span><span class="cm-variable">A</span>[<span class="cm-variable">low</span>]<span class="cm-operator">&lt;=</span><span class="cm-variable">pivot</span>) <span class="cm-operator">++</span><span class="cm-variable">low</span>; &nbsp;<span class="cm-comment">//再从开头往后找到第一个比枢轴大的元素</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">high</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">low</span>]; <span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> <span class="cm-comment">//用low的元素替换high的元素</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span>}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">low</span>]<span class="cm-operator">=</span><span class="cm-variable">pivot</span>;<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//枢轴元素存放到最终位置</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">return</span> &nbsp;<span class="cm-variable">low</span>; <span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//返回存放枢轴的最终位置</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text>​</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/*递归法，快速排序*/</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">QuickSort</span>(<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[],<span class="cm-variable-3">int</span> <span class="cm-variable">low</span>,<span class="cm-variable-3">int</span> <span class="cm-variable">high</span>){</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">if</span>(<span class="cm-variable">low</span><span class="cm-operator">&lt;</span><span class="cm-variable">high</span>){ &nbsp; <span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> <span class="cm-comment">//low和high值要合法<span class="cm-tab" role="presentation" cm-text="    "> </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span></span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable-3">int</span> <span class="cm-variable">pivotpos</span><span class="cm-operator">=</span><span class="cm-variable">Partition</span>(<span class="cm-variable">A</span>,<span class="cm-variable">low</span>,<span class="cm-variable">high</span>);<span class="cm-tab" role="presentation" cm-text="    "> </span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">QuickSort</span>(<span class="cm-variable">A</span>,<span class="cm-variable">low</span>,<span class="cm-variable">pivotpos</span><span class="cm-operator">-</span><span class="cm-number">1</span>); &nbsp;<span class="cm-comment">//分治递归左半部分<span class="cm-tab" role="presentation" cm-text="    ">    </span></span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">QuickSort</span>(<span class="cm-variable">A</span>,<span class="cm-variable">pivotpos</span><span class="cm-operator">+</span><span class="cm-number">1</span>,<span class="cm-variable">high</span>); <span class="cm-comment">//分治递归右半部分</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span>}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 574px;"></div>
+      <div class="CodeMirror-gutters" style="display: none; height: 574px;"></div>
+      </div>
+      </div>
+      </pre>
+      <p><span> </span><strong><span>算法模拟</span></strong></p>
+      <p><img src="https://upload-images.jianshu.io/upload_images/1940317-3bf6002ba2c0b90b?imageMogr2/auto-orient/strip算法模拟动画&quot;" referrerpolicy="no-referrer" alt="快速排序过程"></p>
+      <p><strong><span>空间复杂度</span></strong><span>：</span></p>
+      <p><span> </span><span>平均情况: O(log n )；</span></p>
+      <p><span> </span><span>最好情况：log (n+1)向上取整</span></p>
+      <p><span> </span><span>最坏情况：进行n-1次递归 O(n)栈深度为n-1；</span></p>
+      <p><strong><span>时间复杂度</span></strong><span>：与划分子序列是否对称有关</span></p>
+      <p><span> </span><span>平均情况：O(nlog n);</span></p>
+      <p><span> </span><span>最好情况：O(nlog n);</span></p>
+      <p><span> </span><span>最差情况：两个区域分别包含n-1个元素和0个元素——序列表基本有序时，O(n²)</span></p>
+      <p><strong><span>稳定性</span></strong><span>：不稳定</span></p>
+      <p><strong><span>适用性</span></strong><span>：顺序存储、链表的线性表</span></p>
+      <p><strong><span>特点</span></strong><span>：平均性能最优的排序算法，且在排序过程中并不产生有序子序列，每趟排序后有一个元素将会位于最终位置。</span></p>
+      <p><strong><span>注</span></strong><span>：递归复杂度的表达式：</span><strong><span>T(n) = aT(n/b) +
+            f(n)</span></strong><span>
+          ；其中</span><strong><span>n/b</span></strong><span>是子问题的大小，比如快排每次划分子问题之后的大小，</span><strong><span>a</span></strong><span>是子问题大小的数量，</span><strong><span>f(n)</span></strong><span>是分解问题和合并问题所需要的时间</span>
+      </p>
+    </li>
+  </ol>
+  <h5><a name="选择排序" class="md-header-anchor"></a><span>选择排序</span></h5>
+  <ol start>
+    <li>
+      <p><strong><span>简单选择排序</span></strong></p>
+      <p>
+        <strong><span>算法思想</span></strong><span>：每次从待排序序列中选择一个最小(最大)的元素，作为有序子序列的第I个元素。需进行n-1趟，且比较次数以及排序趟数与序列初始排序无关。先记录min值下标最后再进行交换。</span>
+      </p>
+      <p><strong><span>实现代码</span></strong></p>
+      <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c++"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+      </div>
+      <div class="CodeMirror-measure"></div>
+      <div style="position: relative; z-index: 1;"></div>
+      <div class="CodeMirror-code" role="presentation" style>
+        <div class="CodeMirror-activeline" style="position: relative;">
+          <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+          <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+          <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">SelectSort</span>(<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[],<span class="cm-variable-3">int</span> <span class="cm-variable">n</span>){</span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">i</span><span class="cm-operator">=</span><span class="cm-number">0</span>;<span class="cm-variable">i</span><span class="cm-operator">&lt;</span><span class="cm-variable">n</span><span class="cm-operator">-</span><span class="cm-number">1</span>;<span class="cm-variable">i</span><span class="cm-operator">++</span>){<span class="cm-tab" role="presentation" cm-text="    "> </span>  <span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp; <span class="cm-comment">//最后一个元素不需要排序</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp; &nbsp; &nbsp; <span class="cm-variable">min</span><span class="cm-operator">=</span><span class="cm-variable">i</span>;<span class="cm-tab" role="presentation" cm-text="    ">   </span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">//min存的是当前最小元素所在下标，初值设为第i个</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp; &nbsp; &nbsp; <span class="cm-keyword">for</span>(<span class="cm-variable">j</span><span class="cm-operator">=</span><span class="cm-variable">i</span><span class="cm-operator">+</span><span class="cm-number">1</span>;<span class="cm-variable">j</span><span class="cm-operator">&lt;</span><span class="cm-variable">n</span>;<span class="cm-variable">j</span><span class="cm-operator">++</span>) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">//从第i个元素往后找，一直要找到最后一个元素</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp; &nbsp; &nbsp; <span class="cm-keyword">if</span>(<span class="cm-variable">A</span>[<span class="cm-variable">j</span>]<span class="cm-operator">&lt;</span><span class="cm-variable">A</span>[<span class="cm-variable">min</span>]) <span class="cm-variable">min</span><span class="cm-operator">=</span><span class="cm-variable">j</span>;<span class="cm-tab" role="presentation" cm-text="    ">   </span> &nbsp; &nbsp;<span class="cm-comment">//更新min值</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp; &nbsp; &nbsp; <span class="cm-keyword">if</span>(<span class="cm-variable">min</span><span class="cm-operator">!=</span><span class="cm-variable">i</span>) { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">//如果A[i]!=A[min]，则进行交换</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">ElemType</span> <span class="cm-variable">temp</span><span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span>];</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">A</span>[<span class="cm-variable">i</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">min</span>];</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">A</span>[<span class="cm-variable">min</span>]<span class="cm-operator">=</span><span class="cm-variable">temp</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  } <span class="cm-tab" role="presentation" cm-text="    ">  </span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span>}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 326px;"></div>
+      <div class="CodeMirror-gutters" style="display: none; height: 326px;"></div>
+      </div>
+      </div>
+      </pre>
+      <p><span> </span><strong><span>算法模拟</span></strong></p>
+      <p><img src="https://upload-images.jianshu.io/upload_images/1940317-3bf6002ba2c0b90b?imageMogr2/auto-orient/strip算法模拟动画&quot;" referrerpolicy="no-referrer" alt="快速排序过程"></p>
+      <p><strong><span>空间复杂度</span></strong><span>：</span></p>
+      <p><span> </span><span>平均情况: O(log n )；</span></p>
+      <p><span> </span><span>最好情况：log (n+1)向上取整</span></p>
+      <p><span> </span><span>最坏情况：进行n-1次递归 O(n)栈深度为n-1；</span></p>
+      <p><strong><span>时间复杂度</span></strong><span>：与划分子序列是否对称有关</span></p>
+      <p><span> </span><span>平均情况：O(nlog n);</span></p>
+      <p><span> </span><span>最好情况：O(nlog n);</span></p>
+      <p><span> </span><span>最差情况：两个区域分别包含n-1个元素和0个元素——序列表基本有序时，O(n²)</span></p>
+      <p><strong><span>稳定性</span></strong><span>：不稳定</span></p>
+      <p><strong><span>适用性</span></strong><span>：顺序存储、链表的线性表</span></p>
+      <p><strong><span>特点</span></strong><span>：平均性能最优的排序算法，且在排序过程中并不产生有序子序列，每趟排序后有一个元素将会位于最终位置。</span></p>
+      <p><strong><span>注</span></strong><span>：递归复杂度的表达式：</span><strong><span>T(n) = aT(n/b) +
+            f(n)</span></strong><span>
+          ；其中</span><strong><span>n/b</span></strong><span>是子问题的大小，比如快排每次划分子问题之后的大小，</span><strong><span>a</span></strong><span>是子问题大小的数量，</span><strong><span>f(n)</span></strong><span>是分解问题和合并问题所需要的时间</span>
+      </p>
+    </li>
+    <li>
+      <p><strong><span>堆排序</span></strong></p>
+      <p>
+        <strong><span>算法思想</span></strong><span>：将无序序列建成一个堆，得到关键字最小（或最大）的记录；输出堆顶的最小（大）值后，使剩余的</span><strong><span>n-1</span></strong><span>个元素重又建成一个堆，则可得到</span><strong><span>n</span></strong><span>个元素的次小值；重复执行，得到一个有序序列，这个过程叫堆排序。</span>
+      </p>
+      <p><strong><span>实现代码</span></strong></p>
+      <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c++" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+      </div>
+      <div class="CodeMirror-measure"></div>
+      <div style="position: relative; z-index: 1;"></div>
+      <div class="CodeMirror-code" role="presentation" style>
+        <div class="CodeMirror-activeline" style="position: relative;">
+          <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+          <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+          <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/*由数组第一个可能需要调整的非叶结点</span></span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;<span class="cm-comment">开始检查，直到根结点(注意根结点下标不是0，是从1开始存储)*/</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/*建堆*/</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">BuildMaxHeap</span>(<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[],<span class="cm-variable-3">int</span> <span class="cm-variable">len</span>){</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable-3">int</span> <span class="cm-variable">i</span><span class="cm-operator">=</span><span class="cm-variable">len</span><span class="cm-operator">/</span><span class="cm-number">2</span>;<span class="cm-variable">i</span><span class="cm-operator">&gt;</span><span class="cm-number">0</span>;<span class="cm-variable">i</span><span class="cm-operator">--</span>)</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">AdjustDown</span>(<span class="cm-variable">A</span>,<span class="cm-variable">i</span>,<span class="cm-variable">len</span>); </span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text>​</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/*下沉法*/</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">AdjustDown</span>(<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[],<span class="cm-variable-3">int</span> <span class="cm-variable">k</span>,<span class="cm-variable-3">int</span> <span class="cm-variable">len</span>){ </span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">//A是存储堆的数组,k是需要检查的结点下标,len是堆中结点个数</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-number">0</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">k</span>]; <span class="cm-tab" role="presentation" cm-text="    "> </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">//A[0]暂存这个需要检查的结点值</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable">i</span><span class="cm-operator">=</span><span class="cm-number">2</span><span class="cm-operator">*</span><span class="cm-variable">k</span>;<span class="cm-variable">i</span><span class="cm-operator">&lt;=</span><span class="cm-variable">len</span>;<span class="cm-variable">i</span><span class="cm-operator">*=</span><span class="cm-number">2</span>){<span class="cm-tab" role="presentation" cm-text="    "> </span> &nbsp; &nbsp;<span class="cm-comment">//从这个结点的左孩子开始往下比较，</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">// 如果发生交换，对交换过的结点继续和它的孩子比较</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">if</span>(<span class="cm-variable">i</span><span class="cm-operator">&lt;</span><span class="cm-variable">len</span><span class="cm-operator">&amp;&amp;</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span>]<span class="cm-operator">&lt;</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span><span class="cm-operator">+</span><span class="cm-number">1</span>])</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">i</span><span class="cm-operator">++</span>;<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp;<span class="cm-comment">//如果右孩子大一些，就只要考虑和右孩子比较</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">if</span>(<span class="cm-variable">A</span>[<span class="cm-number">0</span>]<span class="cm-operator">&gt;=</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span>]) &nbsp;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-keyword">break</span>;<span class="cm-tab" role="presentation" cm-text="    "> </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp;<span class="cm-comment">//如果这个结点的值不小于它的较大孩子结点值 则不需要交换</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">else</span>{ </span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">k</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span>];<span class="cm-tab" role="presentation" cm-text="    ">  </span> <span class="cm-comment">//如果这个结点的值小于它的较大孩子</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">//结点值则将较大的孩子结点值赋值给该结点<span class="cm-tab" role="presentation" cm-text="    "> </span></span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">k</span><span class="cm-operator">=</span><span class="cm-variable">i</span>;<span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//i赋值给k也就是从i开始继续往下检查 直到所有结点检查结束<span class="cm-tab" role="presentation" cm-text="    "> </span></span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span>}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">k</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-number">0</span>];<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//检查到最后k的值就是最后一轮交换过的结点位置下标 将该结点换过去<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">    </span></span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/*上浮*/</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-variable-3">void</span> <span class="cm-def">AdjustUp</span>(<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[], <span class="cm-variable-3">int</span> <span class="cm-variable">k</span>){</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">A</span>[<span class="cm-number">0</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">k</span>];</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; <span class="cm-variable-3">int</span> <span class="cm-variable">i</span><span class="cm-operator">=</span><span class="cm-variable">k</span><span class="cm-operator">/</span><span class="cm-number">2</span>;<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//若结点值大于双亲，则双亲下调并继续向上比较</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">while</span>(<span class="cm-variable">i</span><span class="cm-operator">&gt;</span><span class="cm-number">0</span><span class="cm-operator">&amp;&amp;</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span>]<span class="cm-operator">&lt;</span><span class="cm-variable">A</span>[<span class="cm-number">0</span>]){</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">A</span>[<span class="cm-variable">k</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span>];<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-comment">//双亲下调</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">k</span><span class="cm-operator">=</span><span class="cm-variable">i</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">i</span><span class="cm-operator">=</span><span class="cm-variable">k</span><span class="cm-operator">/</span><span class="cm-number">2</span>;<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//向上比较</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; <span class="cm-variable">A</span>[<span class="cm-variable">k</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-number">0</span>];<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//赋值<span class="cm-tab" role="presentation" cm-text="    ">    </span></span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text>​</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/*堆排序*/</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-variable-3">void</span> <span class="cm-def">HeapSort</span>(<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[],<span class="cm-variable-3">int</span> <span class="cm-variable">len</span>){</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-tab" role="presentation" cm-text="    "> </span><span class="cm-variable">BuildMaxHeap</span>(<span class="cm-variable">A</span>,<span class="cm-variable">len</span>);<span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//初始建堆</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-tab" role="presentation" cm-text="    "> </span><span class="cm-keyword">for</span>(<span class="cm-variable">i</span><span class="cm-operator">=</span><span class="cm-variable">len</span>;<span class="cm-variable">i</span><span class="cm-operator">&gt;</span><span class="cm-number">1</span>;<span class="cm-variable">i</span><span class="cm-operator">--</span>){<span class="cm-tab" role="presentation" cm-text="    "> </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//n-1趟的交换和建堆过程</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-tab" role="presentation" cm-text="    "> </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp;<span class="cm-comment">//输出堆顶元素(和堆底元素交换)</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">ElemType</span> <span class="cm-variable">temp</span><span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">i</span>];</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">A</span>[<span class="cm-variable">i</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-number">1</span>];</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">A</span>[<span class="cm-number">1</span>]<span class="cm-operator">=</span><span class="cm-variable">temp</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">printf</span>(<span class="cm-variable">A</span>[<span class="cm-variable">i</span>]);</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">AdjustDown</span>(<span class="cm-variable">A</span>,<span class="cm-number">1</span>,<span class="cm-variable">i</span><span class="cm-operator">-</span><span class="cm-number">1</span>);<span class="cm-tab" role="presentation" cm-text="    "> </span><span class="cm-comment">//把剩余的i-1个元素整理成堆</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; <span class="cm-tab" role="presentation" cm-text="    "> </span>}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; }</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text>​</span></span></pre>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 1398px;">
+      </div>
+      <div class="CodeMirror-gutters" style="display: none; height: 1398px;"></div>
+      </div>
+      </div>
+      </pre>
+    </li>
+  </ol>
+  <p><span> </span><img src="https://upload-images.jianshu.io/upload_images/146850-5ab9542783f2c860.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp" referrerpolicy="no-referrer" alt="算法图示" title="图解"></p>
+  <p><strong><span>算法模拟</span></strong></p>
+  <p><span> </span><img src="https://upload-images.jianshu.io/upload_images/146850-c27418219d88849f.gif?imageMogr2/auto-orient/strip|imageView2/2/w/792/format/webp" referrerpolicy="no-referrer" alt="快速排序过程" title="算法模拟动画"></p>
+  <p><span> </span><strong><span>空间复杂度</span></strong><span>：</span></p>
+  <p><span> </span><span> </span><span>平均情况: O(1)；</span></p>
+  <p><span> </span><strong><span>时间复杂度</span></strong><span>：建堆时间为O(n)</span></p>
+  <p><span> </span><span> </span><span>平均情况：O(nlog n);</span></p>
+  <p><span> </span><span> </span><span>最好情况：O(nlog n);</span></p>
+  <p><span> </span><span> </span><span>最差情况：O(nlog n);</span></p>
+  <p><span> </span><strong><span>稳定性</span></strong><span>：不稳定</span></p>
+  <p><span> </span><strong><span>适用性</span></strong><span>：顺序存储、链表的线性表</span></p>
+  <p><span> </span><strong><span>特点</span></strong><span>：每趟排序后有一个元素将会位于最终位置。</span></p>
+  <p><span> </span></p>
+  <h5><a name="归并排序" class="md-header-anchor"></a><span>归并排序</span></h5>
+  <ol start>
+    <li>
+      <p><strong><span>归并排序</span></strong></p>
+      <p><strong><span>算法思想</span></strong><span>：待排序表含有n个记录，则可以看成是n个有序的子表，每个子表长度为1，然后两两归并，得到
+          ⌈n/2⌉个长度为2或1的有序表；再两两归并，直到合并成一个长度为n的有序表为止，这种方法称为2-路归并。分治思想</span></p>
+      <p><strong><span>实现代码</span></strong></p>
+      <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c++" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+      </div>
+      <div class="CodeMirror-measure"></div>
+      <div style="position: relative; z-index: 1;"></div>
+      <div class="CodeMirror-code" role="presentation" style>
+        <div class="CodeMirror-activeline" style="position: relative;">
+          <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+          <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+          <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">ElemType</span> <span class="cm-operator">*</span><span class="cm-variable">B</span><span class="cm-operator">=</span>(<span class="cm-variable">ElemType</span> <span class="cm-operator">*</span>)<span class="cm-variable">malloc</span>((<span class="cm-variable">n</span><span class="cm-operator">+</span><span class="cm-number">1</span>)<span class="cm-operator">*</span><span class="cm-keyword">sizeof</span>(<span class="cm-variable">ElemType</span>)); <span class="cm-comment">//辅助数组B(动态分配内存)</span></span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text>​</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/*表A的两段A[low…mid]和A[mid+1…high]各自有序，将它们合并成一个有序表*/</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">Merge</span>(<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[],<span class="cm-variable-3">int</span> <span class="cm-variable">low</span>,<span class="cm-variable-3">int</span> <span class="cm-variable">mid</span>,<span class="cm-variable-3">int</span> <span class="cm-variable">high</span>){</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable-3">int</span> <span class="cm-variable">k</span><span class="cm-operator">=</span><span class="cm-variable">low</span>;<span class="cm-variable">k</span><span class="cm-operator">&lt;=</span><span class="cm-variable">high</span>;<span class="cm-variable">k</span><span class="cm-operator">++</span>)<span class="cm-variable">B</span>[<span class="cm-variable">k</span>]<span class="cm-operator">=</span><span class="cm-variable">A</span>[<span class="cm-variable">k</span>];<span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//将A中所有元素复制到B中</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span>(<span class="cm-variable-3">int</span> <span class="cm-variable">i</span><span class="cm-operator">=</span><span class="cm-variable">low</span>,<span class="cm-variable">j</span><span class="cm-operator">=</span><span class="cm-variable">mid</span><span class="cm-operator">+</span><span class="cm-number">1</span>,<span class="cm-variable">k</span><span class="cm-operator">=</span><span class="cm-variable">i</span>;<span class="cm-variable">i</span><span class="cm-operator">&lt;=</span><span class="cm-variable">mid</span><span class="cm-operator">&amp;&amp;</span><span class="cm-variable">j</span><span class="cm-operator">&lt;=</span><span class="cm-variable">high</span>;<span class="cm-variable">k</span><span class="cm-operator">++</span>){ &nbsp;<span class="cm-comment">//k是归并之后数组的下标计数器</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">if</span>(<span class="cm-variable">B</span>[<span class="cm-variable">i</span>]<span class="cm-operator">&lt;=</span><span class="cm-variable">B</span>[<span class="cm-variable">j</span>]) &nbsp; <span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp;<span class="cm-comment">//比较B的左右两段中的元素</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">k</span>]<span class="cm-operator">=</span><span class="cm-variable">B</span>[<span class="cm-variable">i</span><span class="cm-operator">++</span>];<span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span> &nbsp;<span class="cm-comment">//将较小值复制到A中</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">else</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">A</span>[<span class="cm-variable">k</span>]<span class="cm-operator">=</span><span class="cm-variable">B</span>[<span class="cm-variable">j</span><span class="cm-operator">++</span>];</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span>}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">while</span>(<span class="cm-variable">i</span><span class="cm-operator">&lt;=</span><span class="cm-variable">mid</span>)<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-variable">A</span>[<span class="cm-variable">k</span><span class="cm-operator">++</span>]<span class="cm-operator">=</span><span class="cm-variable">B</span>[<span class="cm-variable">i</span><span class="cm-operator">++</span>];<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-comment">//若第一个表未检测完，直接将剩下的部分复制过来</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">while</span>(<span class="cm-variable">j</span><span class="cm-operator">&lt;=</span><span class="cm-variable">high</span>)<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-variable">A</span>[<span class="cm-variable">k</span><span class="cm-operator">++</span>]<span class="cm-operator">=</span><span class="cm-variable">B</span>[<span class="cm-variable">j</span><span class="cm-operator">++</span>];<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-comment">//同上，复制剩余值，且二者只运行其一</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;">}<span class="cm-tab" role="presentation" cm-text="    ">   </span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/*排序*/</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">MergeSort</span>(<span class="cm-variable">ElemType</span> <span class="cm-variable">A</span>[],<span class="cm-variable-3">int</span> <span class="cm-variable">low</span>,<span class="cm-variable-3">int</span> <span class="cm-variable">high</span>){</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">if</span>(<span class="cm-variable">low</span><span class="cm-operator">&lt;</span><span class="cm-variable">high</span>){</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable-3">int</span> <span class="cm-variable">mid</span><span class="cm-operator">=</span>(<span class="cm-variable">low</span><span class="cm-operator">+</span><span class="cm-variable">high</span>)<span class="cm-operator">/</span><span class="cm-number">2</span>;<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//从中间划分两个子序列</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">MergeSort</span>(<span class="cm-variable">A</span>,<span class="cm-variable">low</span>,<span class="cm-variable">mid</span>);<span class="cm-tab" role="presentation" cm-text="    ">   </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//对左侧子序列进行递归排序</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">MergeSort</span>(<span class="cm-variable">A</span>,<span class="cm-variable">mid</span><span class="cm-operator">+</span><span class="cm-number">1</span>,<span class="cm-variable">high</span>);<span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//对右侧子序列进行递归排序</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">Merge</span>(<span class="cm-variable">A</span>,<span class="cm-variable">low</span>,<span class="cm-variable">mid</span>,<span class="cm-variable">high</span>);<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//归并</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span>}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 630px;"></div>
+      <div class="CodeMirror-gutters" style="display: none; height: 630px;"></div>
+      </div>
+      </div>
+      </pre>
+      <p><span> </span><img src="C:\Users\Forev\Desktop\note\20190208200201643.png" referrerpolicy="no-referrer" alt="算法图示"></p>
+      <p><span> </span><strong><span>算法模拟</span></strong></p>
+      <p><img src="https://upload-images.jianshu.io/upload_images/146850-28ce5b816ae5adc0.gif?imageMogr2/auto-orient/strip|imageView2/2/w/883/format/webp" referrerpolicy="no-referrer" alt="归并" title="算法模拟动画"></p>
+      <p><strong><span>空间复杂度</span></strong><span>：</span></p>
+      <p><span> </span><span>平均情况: O(n)；</span></p>
+      <p><strong><span>时间复杂度</span></strong><span>：每趟时间为O(n)，共需log n趟</span></p>
+      <p><span> </span><span>平均情况：O(nlog n);</span></p>
+      <p><span> </span><span>最好情况：O(nlog n);</span></p>
+      <p><span> </span><span>最差情况：O(nlog n);</span></p>
+      <p><strong><span>稳定性</span></strong><span>：稳定</span></p>
+      <p><strong><span>适用性</span></strong><span>：顺序存储、链表的线性表</span></p>
+    </li>
+  </ol>
+  <h5><a name="计数排序" class="md-header-anchor"></a><span>计数排序</span></h5>
+  <ol start>
+    <li>
+      <p><strong><span>计数排序</span></strong></p>
+      <p><strong><span>算法思想</span></strong><span>：
+          计数排序的核心在于将输入的数据值转化为键存储在额外开辟的数组空间中。作为一种线性时间复杂度的排序，计数排序要求输入的数据必须是有确定范围的整数。 </span></p>
+      <p><strong><span>实现代码</span></strong></p>
+      <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c++" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+      </div>
+      <div class="CodeMirror-measure"></div>
+      <div style="position: relative; z-index: 1;"></div>
+      <div class="CodeMirror-code" role="presentation" style>
+        <div class="CodeMirror-activeline" style="position: relative;">
+          <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+          <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+          <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text>​</span></span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">CountSort</span>(<span class="cm-variable">vector</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">int</span><span class="cm-operator">&gt;</span> <span class="cm-operator">&amp;</span><span class="cm-variable">arr</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">maxVal</span>) {</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable-3">int</span> <span class="cm-variable">len</span> <span class="cm-operator">=</span> <span class="cm-variable">arr</span>.<span class="cm-variable">size</span>();</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">if</span> (<span class="cm-variable">len</span> <span class="cm-operator">&lt;</span> <span class="cm-number">1</span>)</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">return</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">vector</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">int</span><span class="cm-operator">&gt;</span> <span class="cm-variable">count</span>(<span class="cm-variable">maxVal</span><span class="cm-operator">+</span><span class="cm-number">1</span>, <span class="cm-number">0</span>); <span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//计数数组</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">vector</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">int</span><span class="cm-operator">&gt;</span> <span class="cm-variable">tmp</span>(<span class="cm-variable">arr</span>);</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span> (<span class="cm-keyword">auto</span> <span class="cm-variable">x</span> : <span class="cm-variable">arr</span>)</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">count</span>[<span class="cm-variable">x</span>]<span class="cm-operator">++</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;=</span> <span class="cm-variable">maxVal</span>; <span class="cm-operator">++</span><span class="cm-variable">i</span>)</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">count</span>[<span class="cm-variable">i</span>] <span class="cm-operator">+=</span> <span class="cm-variable">count</span>[<span class="cm-variable">i</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>];</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-variable">len</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>; <span class="cm-variable">i</span> <span class="cm-operator">&gt;=</span> <span class="cm-number">0</span>; <span class="cm-operator">--</span><span class="cm-variable">i</span>) {</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">arr</span>[<span class="cm-variable">count</span>[<span class="cm-variable">tmp</span>[<span class="cm-variable">i</span>]] <span class="cm-operator">-</span> <span class="cm-number">1</span>] <span class="cm-operator">=</span> <span class="cm-variable">tmp</span>[<span class="cm-variable">i</span>];</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-variable">count</span>[<span class="cm-variable">tmp</span>[<span class="cm-variable">i</span>]]<span class="cm-operator">--</span>;<span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-tab" role="presentation" cm-text="    ">    </span><span class="cm-comment">//注意这里要减1</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="    ">    </span>}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 442px;"></div>
+      <div class="CodeMirror-gutters" style="display: none; height: 442px;"></div>
+      </div>
+      </div>
+      </pre>
+    </li>
+  </ol>
+  <p><strong><span>算法模拟</span></strong></p>
+  <p><span> </span><img src="https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lm9JtwbhXVOfXyecToy%2F-Lm9KQIJAMvCgJQzErQS%2F-Lm9KR6H7q7zAmoZ2MSj%2FcountingSort.gif?generation=1565688974258861&amp;alt=media" referrerpolicy="no-referrer" alt="归并" title="算法模拟动画"></p>
+  <p><span> </span><strong><span>空间复杂度</span></strong><span>：</span></p>
+  <p><span> </span><span> </span><span>平均情况: O(n)；</span></p>
+  <p><span> </span><strong><span>时间复杂度</span></strong><span>：O(n)，不需要进行比较</span></p>
+  <p><span> </span><strong><span>稳定性</span></strong><span>：稳定</span></p>
+  <p><span> </span><strong><span>适用性</span></strong><span>：顺序存储、链表的线性表</span></p>
+  <ol start="2">
+    <li>
+      <p><strong><span>基数排序</span></strong></p>
+      <p>
+        <strong><span>算法思想</span></strong><span>：基数排序(也叫桶排序)是一种很特别的排序方法，它不是基于比较进行排序的，而是采用多关键字排序思想（即基于关键字各位的大小进行排序的），借助“分配”和“收集”两种操作对单逻辑关键字进行排序。基数排序又分为最高位优先（MSD）排序和最低位优先（LSD）排序。</span>
+      </p>
+      <p><strong><span>实现代码（了解即可）</span></strong></p>
+      <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c++" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c++"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+      </div>
+      <div class="CodeMirror-measure"></div>
+      <div style="position: relative; z-index: 1;"></div>
+      <div class="CodeMirror-code" role="presentation" style>
+        <div class="CodeMirror-activeline" style="position: relative;">
+          <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+          <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+          <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">/*</span></span></pre>
+        </div>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">*求数据的最大位数,决定排序次数</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">*/</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">int</span> <span class="cm-def">maxbit</span>(<span class="cm-variable-3">int</span> <span class="cm-variable">data</span>[], <span class="cm-variable-3">int</span> <span class="cm-variable">n</span>) </span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">d</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>; <span class="cm-comment">//保存最大的位数</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">p</span> <span class="cm-operator">=</span> <span class="cm-number">10</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span>(<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-operator">++</span><span class="cm-variable">i</span>)</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">while</span>(<span class="cm-variable">data</span>[<span class="cm-variable">i</span>] <span class="cm-operator">&gt;=</span> <span class="cm-variable">p</span>)</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">p</span> <span class="cm-operator">*=</span> <span class="cm-number">10</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-operator">++</span><span class="cm-variable">d</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">d</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-def">radixsort</span>(<span class="cm-variable-3">int</span> <span class="cm-variable">data</span>[], <span class="cm-variable-3">int</span> <span class="cm-variable">n</span>) <span class="cm-comment">//基数排序</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">d</span> <span class="cm-operator">=</span> <span class="cm-variable">maxbit</span>(<span class="cm-variable">data</span>, <span class="cm-variable">n</span>);</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">tmp</span>[<span class="cm-variable">n</span>];</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">count</span>[<span class="cm-number">10</span>]; <span class="cm-comment">//计数器</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">i</span>, <span class="cm-variable">j</span>, <span class="cm-variable">k</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">radix</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span>(<span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;=</span> <span class="cm-variable">d</span>; <span class="cm-variable">i</span><span class="cm-operator">++</span>) <span class="cm-comment">//进行d次排序</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span>(<span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-number">10</span>; <span class="cm-variable">j</span><span class="cm-operator">++</span>)</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">count</span>[<span class="cm-variable">j</span>] <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-comment">//每次分配前清空计数器</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span>(<span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">j</span><span class="cm-operator">++</span>)</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">k</span> <span class="cm-operator">=</span> (<span class="cm-variable">data</span>[<span class="cm-variable">j</span>] <span class="cm-operator">/</span> <span class="cm-variable">radix</span>) <span class="cm-operator">%</span> <span class="cm-number">10</span>; <span class="cm-comment">//统计每个桶中的记录数</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">count</span>[<span class="cm-variable">k</span>]<span class="cm-operator">++</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span>(<span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>; <span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-number">10</span>; <span class="cm-variable">j</span><span class="cm-operator">++</span>)</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">count</span>[<span class="cm-variable">j</span>] <span class="cm-operator">=</span> <span class="cm-variable">count</span>[<span class="cm-variable">j</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>] <span class="cm-operator">+</span> <span class="cm-variable">count</span>[<span class="cm-variable">j</span>]; <span class="cm-comment">//将tmp中的位置依次分配给每个桶</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span>(<span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-variable">n</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>; <span class="cm-variable">j</span> <span class="cm-operator">&gt;=</span> <span class="cm-number">0</span>; <span class="cm-variable">j</span><span class="cm-operator">--</span>) <span class="cm-comment">//将所有桶中记录依次收集到tmp中</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">k</span> <span class="cm-operator">=</span> (<span class="cm-variable">data</span>[<span class="cm-variable">j</span>] <span class="cm-operator">/</span> <span class="cm-variable">radix</span>) <span class="cm-operator">%</span> <span class="cm-number">10</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">tmp</span>[<span class="cm-variable">count</span>[<span class="cm-variable">k</span>] <span class="cm-operator">-</span> <span class="cm-number">1</span>] <span class="cm-operator">=</span> <span class="cm-variable">data</span>[<span class="cm-variable">j</span>];</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">count</span>[<span class="cm-variable">k</span>]<span class="cm-operator">--</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span>(<span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span>; <span class="cm-variable">j</span><span class="cm-operator">++</span>) <span class="cm-comment">//将临时数组的内容复制到data中</span></span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">data</span>[<span class="cm-variable">j</span>] <span class="cm-operator">=</span> <span class="cm-variable">tmp</span>[<span class="cm-variable">j</span>];</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">radix</span> <span class="cm-operator">=</span> <span class="cm-variable">radix</span> <span class="cm-operator">*</span> <span class="cm-number">10</span>;</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+        <pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 1196px;">
+      </div>
+      <div class="CodeMirror-gutters" style="display: none; height: 1196px;"></div>
+      </div>
+      </div>
+      </pre>
+      <p><span> </span><strong><span>算法模拟</span></strong></p>
+      <p><img src="https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lm9JtwbhXVOfXyecToy%2F-Lm9KQIJAMvCgJQzErQS%2F-Lm9KR9HMl708IHhEYGK%2FradixSort.gif?generation=1565688974178357&amp;alt=media" referrerpolicy="no-referrer" alt="基数" title="算法模拟动画"></p>
+      <p><strong><span>空间复杂度</span></strong><span>：需要开辟关键字基的个数个队列，所以空间复杂度为O(r) </span></p>
+      <p><strong><span>时间复杂度</span></strong><span>：一次&quot;分配&quot;和一次&quot;收集&quot;时间复杂度为O(n+r)。d次就需要O(d(n+r))的时间复杂度
+        </span></p>
+      <p><strong><span>稳定性</span></strong><span>：稳定</span></p>
+      <p><strong><span>适用性</span></strong><span>：顺序存储、链表的线性表</span></p>
+    </li>
+  </ol>
   </div>
 </body>
 
